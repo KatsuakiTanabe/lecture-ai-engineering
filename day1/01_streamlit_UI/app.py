@@ -32,46 +32,52 @@ st.header("基本的なUI要素")
 
 # テキスト入力
 st.subheader("テキスト入力")
-name = st.text_input("あなたの名前", "ゲスト")
+name = st.text_input("あなたの名前", "氏名を記載ください")
 st.write(f"こんにちは、{name}さん！")
 
 # ボタン
-# st.subheader("ボタン")
-# if st.button("クリックしてください"):
-#     st.success("ボタンがクリックされました！")
+st.subheader("ボタン")
+if st.button("クリックしてください"):
+    st.success("クリックありがとうございます！")
 
 # チェックボックス
-# st.subheader("チェックボックス")
-# if st.checkbox("チェックを入れると追加コンテンツが表示されます"):
-#     st.info("これは隠れたコンテンツです！")
+st.subheader("チェックボックス")
+if st.checkbox("チェックを入れると追加コンテンツが表示されます"):
+    st.info("これは隠れたコンテンツです！")
+if st.checkbox("利用規約を確認し内容に同意します"):
+    st.info("ご確認ありがとうございます！")
 
 # スライダー
-# st.subheader("スライダー")
-# age = st.slider("年齢", 0, 100, 25)
-# st.write(f"あなたの年齢: {age}")
+st.subheader("スライダー")
+st.text("年齢を教えてください")
+age = st.slider("", 0, 100, 25)
+st.write(f"あなたの年齢: {age}")
 
 # セレクトボックス
-# st.subheader("セレクトボックス")
-# option = st.selectbox(
-#     "好きなプログラミング言語は?",
-#     ["Python", "JavaScript", "Java", "C++", "Go", "Rust"]
-# )
-# st.write(f"あなたは{option}を選びました")
+st.subheader("セレクトボックス")
+option = st.selectbox(
+    "好きなプログラミング言語は?",
+    ["Python", "JavaScript", "Java", "C++", "Go", "Rust"]
+)
+st.write(f"あなたの好きな言語は{option}ですね！")
 
 # ============================================
 # レイアウト
 # ============================================
-# st.header("レイアウト")
+st.header("レイアウト")
 
 # カラム
-# st.subheader("カラムレイアウト")
-# col1, col2 = st.columns(2)
-# with col1:
-#     st.write("これは左カラムです")
-#     st.number_input("数値を入力", value=10)
-# with col2:
-#     st.write("これは右カラムです")
-#     st.metric("メトリクス", "42", "2%")
+st.subheader("カラムレイアウト")
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.write("これは左カラムです")
+    st.number_input("身長を入力", value=10)
+with col2:
+    st.write("これは中央カラムです")
+    st.number_input("体重を入力", value=10)
+with col3:
+    st.write("これは右カラムです")
+    st.metric("メトリクス", "22", "-3")
 
 # タブ
 # st.subheader("タブ")
