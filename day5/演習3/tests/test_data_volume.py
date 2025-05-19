@@ -21,4 +21,6 @@ def sample_data():
 
 def test_data_volume(sample_data):
     """データ件数が一定以上あることを確認"""
-    assert len(sample_data) >= 300, f"データ件数が少なすぎます: {len(sample_data)} 件（最低300件必要）"
+    assert (
+        len(sample_data) >= 300
+    ), f"データ件数が少なすぎます: {len(sample_data)} 件（最低300件必要）"
